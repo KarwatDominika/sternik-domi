@@ -15,7 +15,7 @@
         <br><br>
 
     </div>
-    <div  th:unless="${#lists.isEmpty(znaczkiToSell)}">
+    <div class="listaZnaczkow" th:unless="${#lists.isEmpty(znaczkiToSell)}">
 
         <table class="table table-striped">
             <thead>
@@ -42,8 +42,8 @@
                     <td th:text="#{${'klaser.status.' + znaczek.status}}">Nowy</td>
                     <td>
                         <button type="submit" name="remove" th:value="${znaczek.numerKatalogowy}"
-                                th:text="#{klaser.remove}"></button>
-
+                                th:text="#{klaser.remove}"></button></td>
+                    <td>
                         <a href="znaczek.html" th:href="@{|/znaczek/${znaczek.numerKatalogowy}|}">
                             <button type="button" th:text="#{klaser.edit}">Edit</button>
                         </a>
