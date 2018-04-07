@@ -15,7 +15,7 @@
         <br><br>
 
     </div>
-    <div  th:unless="${#lists.isEmpty(toSell)}">
+    <div  th:unless="${#lists.isEmpty(znaczkiToSell)}">
 
         <table class="table table-striped">
             <thead>
@@ -31,7 +31,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="znaczek : ${toSell}">
+            <tr th:each="znaczek : ${znaczkiToSell}">
                 <form action="#"  th:object="${znaczek}" method="post">
                     <td th:text="${znaczek.numerKatalogowy}">1</td>
                     <td th:text="${znaczek.opis}">Długi opis</td>

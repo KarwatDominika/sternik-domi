@@ -45,10 +45,10 @@ public class KlaserController {
         return this.klaserService.findAll();
     }
 
-//    @ModelAttribute("znaczkiToSell")
-//    public List<Znaczek> populateZnaczkiToSell() {
-//        return this.klaserService.findAllToSell();
-//    }
+    @ModelAttribute("znaczkiToSell")
+    public List<Znaczek> populateZnaczkiToSell() {
+        return this.klaserService.findAllToSell();
+    }
 
 //    @ModelAttribute("coinsLast3")
 //    public List<Znaczek> populateLast3Znaczki() {
