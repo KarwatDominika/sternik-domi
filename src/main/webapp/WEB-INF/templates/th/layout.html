@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="site-head">
+    <title th:text="#{title.application}">Klaser</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/klaser.css" th:href="@{/css/klaser.css}" />
+    <link rel="icon" href="../../../imgages/znaczek2.ico" th:href="@{/images/znaczek2.ico}" />
+</head>
+
+<body>
+
+<header th:fragment="site-header">
+    <a href="index.html" th:href="@{/}"><img src="../../../images/znaczek.jpg" th:src="@{/images/znaczek.jpg}"/> </a>
+    <a href="klaser.html" th:href="@{/znaczki}">Kolekcja znaczków</a>
+    <a href="tosell.html" th:href="@{/tosell}">Znaczki do sprzedania</a>
+    <a href="znaczek.html" th:href="@{/znaczki/create}">Dodaj znaczek</a>
+    Zalogowany: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b>
+    <form th:action="@{/logout}" method="POST" style="display: inline">
+        <input type=submit class="link" value="Wyloguj"/>
+    </form>
+
+    <ul id="messages">
+        <li th:each="msg : ${MyMessages}" th:text="${msg.text}"
+            th:class="${#strings.toLowerCase(msg.type)}">
+        </li>
+    </ul>
+</header>
+
+<div>
+    <h2 th:text="#{title.list}" style="display: inline;">Klaser znaczków</h2>
+    <img src="../../../images/znaczek.jpg" alt="Klaser logo" title="Klaser logo" th:src="@{/images/znaczek.jpg}"
+         th:alt-title="#{title.application}" style="float: right;" />
+
+</div>
+
+<footer th:fragment="site-footer">
+    Dominika K <a href="https://github.com/KarwatDominika/sternik-domi"> Source code</a>
+    &copy; Sternik Klaser System, 2018
+</footer>
+
+</body>
+</html>

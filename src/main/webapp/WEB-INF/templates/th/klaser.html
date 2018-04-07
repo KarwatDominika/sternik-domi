@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="th/layout ::site-head">
+    <title>Klaser znaczkow pocztowych</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/klaser.css" th:href="@{/css/klaser.css}" />
+</head>
+
+<body>
+<header th:replace="th/layout :: site-header" />
+<div>
+    <h2 th:text="#{title.list}" style="display: inline;">Lista znaczków pocztowych</h2>
+    <br><br>
+
+</div>
+
+<div class="listaZnaczkow" th:unless="${#lists.isEmpty(znaczkiAll)}">
+
+    <table border ="1">
+        <thead bgcolor="silver">
+        <tr align="center">
+            <th th:text="#{klaser.numerKatalogowy}">nr</th>
+            <th th:text="#{klaser.opis}">opis</th>
+            <th th:text="#{klaser.cena}">cena</th>
+            <th th:text="#{klaser.rokProdukcji}">rokProdukcji</th>
+            <th th:text="#{klaser.krajPochodzenia}">krajPochodzenia</th>
+            <th th:text="#{klaser.stan}">stan</th>
+            <th th:text="#{klaser.status}">status</th>
+            <th th:text="#{klaser.operacje}">operacje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="znaczek : ${znaczkiAll}" align="center">
+            <form action="#" th:action="@{/znaczki}" th:object="${znaczek}" method="post">
+                <td th:text="${znaczek.numerKatalogowy}">1</td>
+                <td th:text="${znaczek.opis}">Długi opis</td>
+                <td th:text="${znaczek.cena}">5.12</td>
+                <td th:text="${znaczek.rokProdukcji}">2011/13/01</td>
+                <td th:text="${znaczek.krajPochodzenia}">Polska</td>
+                <td th:text="${znaczek.stan}">Dobry</td>
+                <td th:text="#{${'klaser.status.' + znaczek.status}}">Nowy</td>
+                <td>
+                    <button type="submit" name="remove" th:value="${znaczek.numerKatalogowy}"
+                            th:text="#{klaser.remove}">Dell</button></td>
+
+                 <td>   <a href="znaczek.html" th:href="@{|/znaczki/${znaczek.numerKatalogowy}|}" >
+                        <button type="button" th:text="#{klaser.edit}">Edit</button></a>
+                </td>
+            </form>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="th/layout :: site-footer" />
+</body>
+</html>
