@@ -37,7 +37,7 @@ border-radius: 5px;
 }
 
 ul#messages li.info {
-background: #7f7;
+background: #A9A9A9;
 }
 
 ul#messages li.error {
@@ -101,7 +101,7 @@ form div > table td, form div > table th {
 
 form div > table th {
   font-weight: normal;
-  background-color: #ddff77;
+  background-color: #A9A9A9;
   color: #000000;
 }
 
@@ -151,7 +151,7 @@ div.listaZnaczkow > table > tbody > tr > td > table {
 }
 
 div.listaZnaczkow > table > tbody > tr > td > table > tbody > tr> td {
-  background-color: #ddff77;
+  background-color: #A9A9A9;
   padding: 0px 5px;
 }
 
@@ -180,6 +180,6 @@ input[type=submit].link {
 	border: none; 
 	background: none; 
 	display: inline; 
-	color: blue; 
+	color: #A9A9A9;
 	text-decoration: underline; 
 }
