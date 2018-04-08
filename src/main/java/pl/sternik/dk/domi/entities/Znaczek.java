@@ -38,7 +38,6 @@ public class Znaczek {
     private String stan;
 
 
-    //@Enumerated(EnumType.STRING)
     @NotNull
     private Status status;
 
