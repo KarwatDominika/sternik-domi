@@ -49,13 +49,11 @@
 							<name>jetty.port</name>
 							<value>8083</value>
 						</systemProperty>
-
 					<systemProperty>
 					       <name>spring.profiles.active</name>
 					       <value>h2</value>
 				    </systemProperty>
 					</systemProperties>
-
 				</configuration>
 			</plugin>
 			<plugin>
