@@ -41,8 +41,8 @@ public class ZnaczkiController {
 
 
     @Autowired
-    // @Qualifier("spring-data")
-    @Qualifier("tablica")
+    @Qualifier("spring-data")
+    // @Qualifier("tablica")
     // @Qualifier("lista")
     private KlaserService klaserService;
 

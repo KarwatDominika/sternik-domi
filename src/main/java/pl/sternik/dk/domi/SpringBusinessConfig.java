@@ -16,7 +16,7 @@ package pl.sternik.dk.domi;
 @Configuration
 @ComponentScan(basePackages = { "pl.sternik.dk.domi" }, excludeFilters = {
         @Filter(type = FilterType.REGEX, pattern = "pl\\.sternik\\.dk\\.domi\\.web\\..*") })
-@ImportResource({"classpath:/applicationContext.xml"})//,"classpath:/database-config.xml"})
+@ImportResource({"classpath:/applicationContext*.xml"})//,"classpath:/database-config.xml"})
 public class SpringBusinessConfig {
 
      @Bean

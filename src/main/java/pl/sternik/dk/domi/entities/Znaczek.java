@@ -4,16 +4,21 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
+@Entity
 @XmlRootElement
 public class Znaczek {
 
+    @Id
     @NotNull
     private Long numerKatalogowy;
 
@@ -32,6 +37,8 @@ public class Znaczek {
     @NotNull
     private String stan;
 
+
+    //@Enumerated(EnumType.STRING)
     @NotNull
     private Status status;
 
